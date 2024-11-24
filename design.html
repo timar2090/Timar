@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>设计生成 - 比比-文生图工作室</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="design.css">
+</head>
+<body>
+    <div class="design-container">
+        <div class="left-panel">
+            <div class="reference-section">
+                <h2>成品参考样式</h2>
+                <div class="reference-image">
+                    <img src="https://placehold.co/400x400/99ccff/ffffff?text=参考样式" alt="参考样式">
+                </div>
+            </div>
+            <div class="input-section">
+                <h2>输入你想要生成的内容（英文提示词）</h2>
+                <textarea 
+                    id="promptInput" 
+                    maxlength="140" 
+                    placeholder="请输入你的创意描述（最多140字）..."
+                ></textarea>
+                <div class="char-counter">
+                    <span id="charCount">0</span>/140
+                </div>
+                <button id="generateBtn" class="generate-btn">去生成</button>
+            </div>
+        </div>
+        <div class="right-panel">
+            <div class="result-section">
+                <h2>生成结果</h2>
+                <div class="result-display" id="resultDisplay">
+                    <div class="placeholder-text">生成的图片将在这里显示</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="design.js"></script>
+</body>
+</html> 
