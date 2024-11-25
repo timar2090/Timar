@@ -210,7 +210,7 @@ body {
 
 @media (max-width: 768px) {
     .processing-container {
-        margin-top: 120px;
+        margin-top: 120px; /* 增加顶部间距，为两行导航腾出空间 */
         padding: 0 15px;
     }
 
@@ -304,10 +304,13 @@ body {
         align-items: flex-start;
         gap: 15px;
         padding: 10px 15px;
+        height: auto; /* 允许高度自适应 */
     }
 
     .back-to-website {
         margin-bottom: 10px; /* 增加返回按钮与标题的间距 */
+        width: 100%; /* 让返回按钮占满宽度 */
+        justify-content: center; /* 居中返回按钮文字 */
     }
 
     .page-title {
@@ -317,6 +320,7 @@ body {
         width: 100%;
         text-align: center;
         font-size: 1.2rem;
+        padding: 10px 0;
     }
 
     /* 结果区域移动端布局 */
@@ -328,14 +332,20 @@ body {
     .upload-section,
     .result-section {
         width: 100%;
-        min-height: 400px; /* 增加结果区域的高度 */
+        min-height: 500px; /* 增加结果区域的高度 */
         padding: 15px;
     }
 
-    /* 调整图片显示 */
+    /* 调整图片显示区域 */
+    .result-display {
+        min-height: 400px; /* 确保结果显示区域足够高 */
+        margin-bottom: 20px;
+    }
+
     .result-image {
         max-width: 100%;
-        height: auto;
+        max-height: 350px; /* 控制图片最大高度 */
+        object-fit: contain;
     }
 
     /* 优化按钮和控件 */
@@ -344,19 +354,66 @@ body {
         width: 100%;
         padding: 12px;
         font-size: 14px;
+        margin-top: 15px;
+    }
+
+    /* 调整上传区域 */
+    .upload-area {
+        min-height: 300px;
     }
 }
 
 /* 更小屏幕的适配 */
 @media (max-width: 480px) {
     .processing-container {
-        margin-top: 100px;
+        margin-top: 110px;
         padding: 0 10px;
+    }
+
+    .nav-content {
+        padding: 8px 12px;
+    }
+
+    .back-to-website {
+        font-size: 14px;
+        padding: 8px 12px;
+    }
+
+    .page-title {
+        font-size: 1.1rem;
     }
 
     .upload-section,
     .result-section {
-        min-height: 350px;
+        min-height: 450px; /* 稍微减小高度 */
         padding: 12px;
+    }
+
+    .result-display {
+        min-height: 350px;
+    }
+
+    .result-image {
+        max-height: 300px;
+    }
+
+    .upload-area {
+        min-height: 250px;
+    }
+}
+
+/* 确保在横屏模式下也能良好显示 */
+@media (max-height: 600px) and (orientation: landscape) {
+    .processing-container {
+        margin-top: 100px;
+    }
+
+    .upload-section,
+    .result-section {
+        min-height: 400px;
+    }
+
+    .result-display {
+        min-height: 300px;
     }
 } 
