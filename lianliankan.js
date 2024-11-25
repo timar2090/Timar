@@ -85,12 +85,17 @@ document.addEventListener('DOMContentLoaded', function() {
         const isMatch = tile1.textContent === tile2.textContent;
         
         if (isMatch) {
+            tile1.classList.add('matching');
+            tile2.classList.add('matching');
+            
             setTimeout(() => {
+                tile1.classList.remove('matching');
+                tile2.classList.remove('matching');
                 tile1.classList.add('matched');
                 tile2.classList.add('matched');
                 matchedPairs++;
                 checkWin();
-            }, 500);
+            }, 300);
         } else {
             setTimeout(() => {
                 tile1.classList.remove('selected');
@@ -150,9 +155,9 @@ document.addEventListener('DOMContentLoaded', function() {
         for (const [_, pair] of pairs) {
             if (pair.length === 2) {
                 pair.forEach(tile => {
-                    tile.style.backgroundColor = '#ffeb3b';
+                    tile.classList.add('hint');
                     setTimeout(() => {
-                        tile.style.backgroundColor = '';
+                        tile.classList.remove('hint');
                     }, 1000);
                 });
                 break;
