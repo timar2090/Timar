@@ -1064,4 +1064,97 @@ footer {
     .showcase-grid {
         grid-template-columns: 1fr;
     }
+}
+
+/* 在现有的媒体查询中添加和修改以下样式 */
+@media (max-width: 768px) {
+    .nav-content {
+        flex-direction: column;
+        padding: 10px;
+        height: auto;
+    }
+
+    .nav-right {
+        width: 100%;
+        justify-content: center;
+        order: -1; /* 将右侧认证按钮移到顶部 */
+        margin-bottom: 10px;
+        background: transparent;
+    }
+
+    .nav-left {
+        width: 100%;
+    }
+
+    .logo {
+        display: none; /* 在移动端隐藏logo */
+    }
+
+    .nav-menu {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        gap: 5px;
+    }
+
+    .menu-item {
+        position: relative;
+    }
+
+    .nav-link {
+        font-size: 14px;
+        padding: 6px 10px;
+    }
+
+    .dropdown-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 160px;
+        max-height: 300px;
+        overflow-y: auto;
+        background: white;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        z-index: 1000;
+    }
+
+    .auth-buttons {
+        gap: 10px;
+    }
+
+    .auth-button {
+        padding: 6px 12px;
+        font-size: 12px;
+    }
+
+    /* 调整主内容区域的上边距，以适应新的导航栏高度 */
+    main {
+        margin-top: 100px;
+    }
+}
+
+/* 针对更小屏幕的优化 */
+@media (max-width: 480px) {
+    .nav-right {
+        padding: 5px;
+    }
+
+    .auth-buttons {
+        gap: 8px;
+    }
+
+    .auth-button {
+        padding: 5px 10px;
+        font-size: 12px;
+    }
+
+    .nav-menu {
+        gap: 2px;
+    }
+
+    .nav-link {
+        padding: 5px 8px;
+        font-size: 13px;
+    }
 } 
