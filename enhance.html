@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>图片变清晰 - 比比控科技</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="ai-processing.css">
+</head>
+<body>
+    <!-- 科技感网格背景 -->
+    <div class="tech-grid"></div>
+    
+    <!-- 发光圆环装饰 -->
+    <div class="glow-circles">
+        <div class="glow-circle"></div>
+        <div class="glow-circle"></div>
+    </div>
+
+    <!-- 顶部导航 -->
+    <header class="ai-header">
+        <div class="header-content">
+            <a href="website.html" class="back-btn">
+                <svg viewBox="0 0 24 24" width="20" height="20">
+                    <path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" fill="currentColor"/>
+                </svg>
+                返回官网
+            </a>
+            <h1>AI图片变清晰</h1>
+        </div>
+    </header>
+
+    <!-- 主要内容区域 -->
+    <div class="ai-container">
+        <!-- 左侧面板 -->
+        <div class="glass-card">
+            <div class="section-title">
+                上传原图
+            </div>
+            <div class="upload-area" id="uploadArea">
+                <input type="file" id="imageInput" accept="image/*" hidden>
+                <div class="upload-placeholder">
+                    <p>点击或拖拽图片到这里</p>
+                    <span>支持jpg、png格式，最大10MB</span>
+                </div>
+                <img id="previewImage" class="preview-image" hidden>
+            </div>
+            
+            <!-- 参数调整区域 -->
+            <div class="param-section">
+                <div class="param-group">
+                    <label for="scaleLevel">放大倍数</label>
+                    <select id="scaleLevel" class="param-select">
+                        <option value="2">2倍</option>
+                        <option value="4" selected>4倍</option>
+                        <option value="8">8倍</option>
+                    </select>
+                </div>
+                <div class="param-group">
+                    <label for="enhanceLevel">优化程度</label>
+                    <input type="range" id="enhanceLevel" min="0" max="100" value="50" class="param-slider">
+                </div>
+            </div>
+
+            <button id="enhanceBtn" class="ai-btn" disabled>
+                开始优化
+            </button>
+        </div>
+
+        <!-- 右侧面板 -->
+        <div class="glass-card">
+            <div class="section-title">
+                优化结果
+            </div>
+            <div class="result-display" id="resultDisplay">
+                <div class="placeholder-text">优化后的图片将在这里显示</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="enhance.js"></script>
+</body>
+</html> 

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>注册 - 比比-文生图工作室</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="register.css">
+</head>
+<body>
+    <div class="register-container">
+        <div class="register-box">
+            <h1>账号注册</h1>
+            <form id="registerForm" class="register-form">
+                <div class="form-group">
+                    <label>账户</label>
+                    <input type="text" name="username" required placeholder="请输入账户名">
+                </div>
+                <div class="form-group">
+                    <label>密码</label>
+                    <input type="password" name="password" required placeholder="请输入密码">
+                </div>
+                <div class="form-group">
+                    <label>确认密码</label>
+                    <input type="password" name="confirmPassword" required placeholder="请再次输入密码">
+                </div>
+                <div class="form-group">
+                    <label>安全问题</label>
+                    <select name="securityQuestion" required>
+                        <option value="">请选择安全问题</option>
+                        <option value="1">您的出生地是？</option>
+                        <option value="2">您母亲的姓名是？</option>
+                        <option value="3">您的小学校名是？</option>
+                        <option value="4">您最喜欢的颜色是？</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>安全答案</label>
+                    <input type="text" name="securityAnswer" required placeholder="请输入安全问题答案">
+                </div>
+                <button type="submit" class="register-btn">注册</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- 注册成功提示框 -->
+    <div id="successOverlay" class="success-overlay" style="display: none;">
+        <div class="success-box">
+            <div class="success-icon">✓</div>
+            <h2>注册完成</h2>
+            <p>正在自动登录...</p>
+        </div>
+    </div>
+
+    <script src="auth.js"></script>
+    <script src="register.js"></script>
+</body>
+</html> 

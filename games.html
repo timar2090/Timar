@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>休闲游戏 - 比比控科技</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="games.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="nav-bar">
+        <div class="nav-content">
+            <a href="website.html" class="back-to-website">
+                <svg class="back-icon" viewBox="0 0 24 24">
+                    <path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" />
+                </svg>
+                返回官网
+            </a>
+            <div class="nav-right">
+                <a href="vip.html" class="nav-btn vip-btn">开通会员</a>
+                <a href="#" class="nav-btn login-btn" id="loginBtn">登录</a>
+                <a href="register.html" class="nav-btn register-btn" id="registerBtn">注册</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="games-container">
+        <h1>休闲游戏</h1>
+        <div class="games-grid">
+            <div class="game-card">
+                <div class="game-card-inner" onclick="location.href='games/lianliankan.html'">
+                    <div class="game-preview">
+                        <div class="game-preview-overlay"></div>
+                        <img src="assets/games/lianliankan.png" alt="连连看">
+                        <div class="game-badge">
+                            <i class="fas fa-puzzle-piece"></i>
+                        </div>
+                    </div>
+                    <div class="game-info">
+                        <div class="game-header">
+                            <h3>连连看</h3>
+                            <span class="game-tag">休闲</span>
+                        </div>
+                        <p>考验记忆力和观察力的经典配对游戏</p>
+                        <div class="game-footer">
+                            <span class="play-now">
+                                <i class="fas fa-play-circle"></i> 立即开玩
+                            </span>
+                            <span class="difficulty">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html> 

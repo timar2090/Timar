@@ -1,11 +1,9 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const gridItems = document.querySelectorAll('.grid-item');
-    
-    gridItems.forEach(item => {
-        item.addEventListener('click', function() {
-            const designType = this.getAttribute('data-type');
-            // 跳转到设计页面
-            window.location.href = `design.html?type=${designType}`;
+    // 为所有设计项目添加点击事件
+    document.querySelectorAll('.grid-item').forEach(item => {
+        item.addEventListener('click', () => {
+            const type = item.getAttribute('data-type');
+            window.location.href = `design.html?type=${type}`;
         });
     });
 }); 

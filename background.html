@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>图片背景生成 - 比比控科技</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="ai-processing.css">
+</head>
+<body>
+    <!-- 科技感网格背景 -->
+    <div class="tech-grid"></div>
+    
+    <!-- 发光圆环装饰 -->
+    <div class="glow-circles">
+        <div class="glow-circle"></div>
+        <div class="glow-circle"></div>
+    </div>
+
+    <!-- 顶部导航 -->
+    <header class="ai-header">
+        <div class="header-content">
+            <a href="website.html" class="back-btn">
+                <svg viewBox="0 0 24 24" width="20" height="20">
+                    <path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" fill="currentColor"/>
+                </svg>
+                返回官网
+            </a>
+            <h1>AI图片背景生成</h1>
+        </div>
+    </header>
+
+    <!-- 主要内容区域 -->
+    <div class="ai-container">
+        <!-- 左侧面板 -->
+        <div class="glass-card">
+            <div class="section-title">
+                上传原图
+            </div>
+            <div class="upload-area" id="uploadArea">
+                <input type="file" id="imageInput" accept="image/*" hidden>
+                <div class="upload-placeholder">
+                    <p>点击或拖拽图片到这里</p>
+                    <span>支持jpg、png格式，最大10MB</span>
+                </div>
+                <img id="previewImage" class="preview-image" hidden>
+            </div>
+            
+            <!-- 背景样式选择 -->
+            <div class="style-section">
+                <h3>选择背景风格</h3>
+                <div class="style-options">
+                    <button class="style-btn active" data-style="natural">自然风格</button>
+                    <button class="style-btn" data-style="abstract">抽象风格</button>
+                    <button class="style-btn" data-style="geometric">几何风格</button>
+                </div>
+            </div>
+
+            <!-- 背景参数调整 -->
+            <div class="param-section">
+                <div class="param-group">
+                    <label for="bgColor">背景颜色</label>
+                    <input type="color" id="bgColor" value="#ffffff">
+                </div>
+                <div class="param-group">
+                    <label for="blurLevel">模糊程度</label>
+                    <input type="range" id="blurLevel" min="0" max="100" value="30" class="param-slider">
+                </div>
+            </div>
+
+            <button id="generateBtn" class="ai-btn" disabled>
+                开始生成
+            </button>
+        </div>
+
+        <!-- 右侧面板 -->
+        <div class="glass-card">
+            <div class="section-title">
+                生成结果
+            </div>
+            <div class="result-display" id="resultDisplay">
+                <div class="placeholder-text">生成的图片将在这里显示</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="background.js"></script>
+</body>
+</html> 

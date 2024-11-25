@@ -3,11 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>设计生成 - 比比-文生图工作室</title>
+    <title>设计生成 - 比比控科技</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="design.css">
 </head>
 <body>
+    <header class="design-header">
+        <div class="header-content">
+            <a href="index.html" class="back-btn">返回首页</a>
+            <h1 id="designTitle">设计表情包</h1>
+        </div>
+    </header>
     <div class="design-container">
         <div class="left-panel">
             <div class="reference-section">
@@ -20,11 +26,11 @@
                 <h2>输入你想要生成的内容（英文提示词）</h2>
                 <textarea 
                     id="promptInput" 
-                    maxlength="140" 
-                    placeholder="请输入你的创意描述（最多140字）..."
+                    maxlength="150" 
+                    placeholder="请输入你的创意描述（最多150字）..."
                 ></textarea>
                 <div class="char-counter">
-                    <span id="charCount">0</span>/140
+                    <span id="charCount">0</span>/150
                 </div>
                 <button id="generateBtn" class="generate-btn">去生成</button>
             </div>
