@@ -3,56 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>注册 - 比比-文生图工作室</title>
+    <title>注册 - 比比控科技</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="register.css">
+    <link rel="stylesheet" href="auth.css">
 </head>
 <body>
-    <div class="register-container">
-        <div class="register-box">
-            <h1>账号注册</h1>
-            <form id="registerForm" class="register-form">
+    <nav class="nav-bar">
+        <div class="nav-content">
+            <a href="index.html" class="back-to-website">
+                <svg class="back-icon" viewBox="0 0 24 24">
+                    <path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" />
+                </svg>
+                返回官网
+            </a>
+        </div>
+    </nav>
+
+    <div class="auth-container">
+        <div class="auth-box">
+            <h2>注册账号</h2>
+            <form class="auth-form" id="registerForm">
                 <div class="form-group">
-                    <label>账户</label>
-                    <input type="text" name="username" required placeholder="请输入账户名">
+                    <label for="username">用户名</label>
+                    <input type="text" id="username" name="username" required>
                 </div>
                 <div class="form-group">
-                    <label>密码</label>
-                    <input type="password" name="password" required placeholder="请输入密码">
+                    <label for="email">邮箱</label>
+                    <input type="email" id="email" name="email" required>
                 </div>
                 <div class="form-group">
-                    <label>确认密码</label>
-                    <input type="password" name="confirmPassword" required placeholder="请再次输入密码">
+                    <label for="password">密码</label>
+                    <input type="password" id="password" name="password" required>
                 </div>
                 <div class="form-group">
-                    <label>安全问题</label>
-                    <select name="securityQuestion" required>
-                        <option value="">请选择安全问题</option>
-                        <option value="1">您的出生地是？</option>
-                        <option value="2">您母亲的姓名是？</option>
-                        <option value="3">您的小学校名是？</option>
-                        <option value="4">您最喜欢的颜色是？</option>
-                    </select>
+                    <label for="confirmPassword">确认密码</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" required>
                 </div>
-                <div class="form-group">
-                    <label>安全答案</label>
-                    <input type="text" name="securityAnswer" required placeholder="请输入安全问题答案">
+                <button type="submit" class="auth-submit">注册</button>
+                <div class="auth-links">
+                    <span>已有账号？</span>
+                    <a href="#" id="loginBtn">立即登录</a>
                 </div>
-                <button type="submit" class="register-btn">注册</button>
             </form>
         </div>
     </div>
 
-    <!-- 注册成功提示框 -->
-    <div id="successOverlay" class="success-overlay" style="display: none;">
-        <div class="success-box">
-            <div class="success-icon">✓</div>
-            <h2>注册完成</h2>
-            <p>正在自动登录...</p>
-        </div>
-    </div>
-
     <script src="auth.js"></script>
-    <script src="register.js"></script>
 </body>
 </html> 

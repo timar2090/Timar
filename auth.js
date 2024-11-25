@@ -151,28 +151,7 @@ const authManager = new AuthManager();
 // 初始化UI事件
 document.addEventListener('DOMContentLoaded', function() {
     // 添加登录弹窗到页面
-    document.body.insertAdjacentHTML('beforeend', `
-        <div class="modal-overlay" id="loginModal">
-            <div class="modal">
-                <span class="modal-close">&times;</span>
-                <form class="auth-form" id="loginForm">
-                    <h2>登录</h2>
-                    <div class="form-group">
-                        <label>用户名</label>
-                        <input type="text" name="username" required>
-                    </div>
-                    <div class="form-group">
-                        <label>密码</label>
-                        <input type="password" name="password" required>
-                    </div>
-                    <button type="submit" class="auth-btn">登录</button>
-                    <div class="auth-switch">
-                        还没有账号？<a id="switchToRegister">立即注册</a>
-                    </div>
-                </form>
-            </div>
-        </div>
-    `);
+    createLoginModal();
 
     // 绑定事件
     const loginBtn = document.getElementById('loginBtn');
@@ -223,3 +202,31 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+function createLoginModal() {
+    const modalHTML = `
+        <div class="modal-overlay" id="loginModal">
+            <div class="modal">
+                <span class="modal-close">&times;</span>
+                <h2 style="text-align: center; margin-bottom: 20px; color: #333;">登录</h2>
+                <form class="auth-form" id="loginForm">
+                    <div class="form-group">
+                        <label for="loginUsername">用户名</label>
+                        <input type="text" id="loginUsername" name="username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="loginPassword">密码</label>
+                        <input type="password" id="loginPassword" name="password" required>
+                    </div>
+                    <button type="submit" class="auth-btn">登录</button>
+                    <div class="auth-switch">
+                        <span>还没有账号？</span>
+                        <a href="register.html">立即注册</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    `;
+
+    document.body.insertAdjacentHTML('beforeend', modalHTML);
+}

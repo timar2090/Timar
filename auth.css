@@ -88,4 +88,201 @@
 
 .auth-switch a:hover {
     text-decoration: underline;
+}
+
+/* 认证页面的通用样式 */
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 64px);
+    padding: 20px;
+    margin-top: 64px;
+    background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+}
+
+.auth-box {
+    background: white;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+.auth-box h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+    font-size: 24px;
+}
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    color: #666;
+    font-size: 14px;
+}
+
+.form-group input {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #1E90FF;
+}
+
+.auth-submit {
+    background: #1E90FF;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.auth-submit:hover {
+    background: #1873CC;
+}
+
+.auth-links {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #666;
+}
+
+.auth-links a {
+    color: #1E90FF;
+    text-decoration: none;
+    margin-left: 5px;
+}
+
+.auth-links a:hover {
+    text-decoration: underline;
+}
+
+/* 登录弹框的移动端适配 */
+.modal {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 400px;
+    position: relative;
+}
+
+.modal h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+/* 移动端适配 */
+@media (max-width: 768px) {
+    .modal {
+        width: 95%;
+        padding: 20px;
+        margin: 10px;
+    }
+
+    .modal h2 {
+        font-size: 20px;
+        margin-bottom: 15px;
+    }
+
+    .modal .form-group input {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .modal .auth-btn {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .modal .auth-switch {
+        font-size: 13px;
+    }
+
+    .modal-close {
+        right: 15px;
+        top: 15px;
+        font-size: 18px;
+    }
+}
+
+/* 注册页面的移动端适配 */
+@media (max-width: 768px) {
+    .auth-container {
+        padding: 15px;
+        margin-top: 56px;
+        min-height: calc(100vh - 56px);
+    }
+
+    .auth-box {
+        padding: 20px;
+        width: 95%;
+    }
+
+    .auth-box h2 {
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+
+    .form-group label {
+        font-size: 13px;
+    }
+
+    .form-group input {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .auth-submit {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .auth-links {
+        font-size: 13px;
+        margin-top: 15px;
+    }
+}
+
+/* 更小屏幕的适配 */
+@media (max-width: 480px) {
+    .modal {
+        width: 100%;
+        margin: 10px;
+        padding: 15px;
+    }
+
+    .auth-box {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .form-group {
+        gap: 6px;
+    }
 } 
