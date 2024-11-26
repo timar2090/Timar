@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>连连看 - 比比控科技</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="./lianliankan.css">
+</head>
+<body>
+    <nav class="nav-bar">
+        <div class="nav-content">
+            <div class="nav-left">
+                <a href="../games.html" class="back-to-website">
+                    <svg class="back-icon" viewBox="0 0 24 24">
+                        <path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" />
+                    </svg>
+                    返回游戏列表
+                </a>
+            </div>
+            <h1 class="game-title">连连看</h1>
+            <div class="nav-right">
+                <a href="../vip.html" class="nav-btn vip-btn">开通会员</a>
+                <a href="#" class="nav-btn login-btn" id="loginBtn">登录</a>
+                <a href="../register.html" class="nav-btn register-btn" id="registerBtn">注册</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="game-container">
+        <div class="game-header">
+            <div class="scores">
+                <div class="score-box">
+                    <span class="score-label">剩余时间</span>
+                    <span class="score-value" id="timeLeft">300</span>
+                </div>
+                <div class="score-box">
+                    <span class="score-label">最高分</span>
+                    <span class="score-value" id="bestScore">0</span>
+                </div>
+            </div>
+            <div class="controls">
+                <button id="newGameBtn" class="control-btn">新游戏</button>
+                <button id="hintBtn" class="control-btn">提示</button>
+            </div>
+        </div>
+
+        <div class="game-board" id="gameBoard">
+            <!-- 游戏格子将通过 JavaScript 动态生成 -->
+        </div>
+
+        <div class="game-footer">
+            <p class="game-tip">点击两个相同的图案进行消除</p>
+        </div>
+    </main>
+
+    <script src="./lianliankan.js"></script>
+</body>
+</html> 
