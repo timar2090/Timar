@@ -60,7 +60,7 @@ body {
 .logo {
     font-size: 20px;
     font-weight: bold;
-    color: #1E90FF;
+    color: #000000;
     background: linear-gradient(45deg, #1E90FF, #00BFFF);
     -webkit-background-clip: text;
     background-clip: text;
@@ -81,58 +81,187 @@ body {
 .nav-link {
     font-size: 16px;
     font-weight: 400;
-    color: #0099FF;
+    color: #000000;
     text-decoration: none;
     padding: 8px 16px;
     position: relative;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     border-radius: 6px;
+    z-index: 1;
 }
 
-/* 下拉菜单中的链接样式 */
-.dropdown-menu a {
-    color: #0099FF;
-    display: block;
-    padding: 8px 16px;
-    text-decoration: none;
-    font-size: 14px;
-    font-weight: normal;
-    transition: all 0.3s ease;
+/* 导航链接悬浮效果 */
+.nav-link::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(120deg, 
+        rgba(30, 144, 255, 0.08),  /* 亮蓝色 #1E90FF */
+        rgba(0, 191, 255, 0.08),   /* 天蓝色 #00BFFF */
+        rgba(124, 58, 237, 0.08)   /* 紫色 #7C3AED */
+    );
+    border-radius: 6px;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: -1;
 }
 
-/* 悬浮效果 */
-.nav-link:hover, .dropdown-menu a:hover {
-    transform: translateY(-1px);
-    color: #0077CC;
+.nav-link:hover {
+    color: #1E90FF;  /* 改为亮蓝色，与渐变起始色相匹配 */
 }
 
+.nav-link:hover::before {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+/* 移除之前的光点相关代码 */
+.nav-link::after,
+.menu-item::after {
+    content: none;
+}
+
+/* 添加一个透明的连接区域 */
+.menu-item::before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;  /* 与下拉框同宽 */
+    height: 20px;  /* 增加连接区域的高度 */
+    background: transparent;
+}
+
+/* 下拉菜单样式优化 */
 .dropdown-menu {
     display: none;
     position: absolute;
-    top: 100%;
-    left: 0;
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    padding: 8px 0;
-    min-width: 160px;
+    top: calc(100% + 15px);  /* 稍微增加距离 */
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    box-shadow: 
+        0 4px 20px rgba(0, 0, 0, 0.08),
+        0 0 0 1px rgba(0, 0, 0, 0.03),
+        0 0 40px rgba(37, 99, 235, 0.05);
+    padding: 10px;
+    min-width: 200px;
+    opacity: 0;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);  /* 增加过渡时间 */
+    pointer-events: none;
+}
+
+.dropdown-menu::before {
+    content: none;
 }
 
 .menu-item:hover .dropdown-menu {
     display: block;
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+    pointer-events: auto;
+    transition-delay: 0s;  /* 显示无需延迟 */
 }
 
+/* 当鼠标离开菜单项时，延迟隐藏下拉框 */
+.menu-item:not(:hover) .dropdown-menu {
+    transition-delay: 0.6s;  /* 增加隐藏延迟到0.6秒 */
+}
+
+/* 下拉菜单项样式优化 */
 .dropdown-menu a {
-    color: #0099FF;
+    color: #1f2937;
     display: block;
-    padding: 8px 16px;
+    padding: 12px 20px;
     text-decoration: none;
     font-size: 14px;
+    border-radius: 8px;
     transition: all 0.3s ease;
+    position: relative;
+    margin: 2px 0;
 }
 
 .dropdown-menu a:hover {
-    background: rgba(0, 153, 255, 0.1);
+    background: linear-gradient(120deg,
+        rgba(30, 144, 255, 0.08),
+        rgba(124, 58, 237, 0.08)
+    );
+    color: #1E90FF;
+    padding-left: 24px;
+}
+
+.dropdown-menu a::after {
+    content: '→';
+    position: absolute;
+    right: 20px;
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: all 0.3s ease;
+}
+
+.dropdown-menu a:hover::after {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* 添加下拉菜单项的动画效果 */
+.dropdown-menu a {
+    animation: slideIn 0.3s ease forwards;
+    opacity: 0;
+    transform: translateX(-10px);
+}
+
+@keyframes slideIn {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* 为每个下拉菜单项添加递增延迟 */
+.dropdown-menu a:nth-child(1) { animation-delay: 0.1s; }
+.dropdown-menu a:nth-child(2) { animation-delay: 0.15s; }
+.dropdown-menu a:nth-child(3) { animation-delay: 0.2s; }
+.dropdown-menu a:nth-child(4) { animation-delay: 0.25s; }
+.dropdown-menu a:nth-child(5) { animation-delay: 0.3s; }
+.dropdown-menu a:nth-child(6) { animation-delay: 0.35s; }
+
+/* 添加菜单项指示器 */
+.menu-item {
+    position: relative;
+}
+
+.menu-item::after {
+    content: '';
+    position: absolute;
+    bottom: 16px;
+    left: 85%;
+    width: 8px;
+    height: 8px;
+    background: conic-gradient(
+        from 225deg,
+        rgba(59, 130, 246, 0.8) 0deg,    /* 蓝色起始 */
+        rgba(16, 185, 129, 0.8) 180deg,   /* 绿色过渡 */
+        rgba(59, 130, 246, 0.8) 360deg    /* 回到蓝色 */
+    );
+    filter: blur(2.5px);
+    border-radius: 50%;
+    transform: translateX(-50%) scale(0);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 0;
+    box-shadow: 
+        0 0 20px 2px rgba(59, 130, 246, 0.25),
+        0 0 40px 4px rgba(16, 185, 129, 0.15);
+    animation: rotateDot2 4s linear infinite;
+}
+
+.menu-item:hover::after {
+    opacity: 1;
+    transform: translateX(-50%) scale(2) rotate(-180deg);
 }
 
 /* 认证按钮样式 */
@@ -1156,5 +1285,24 @@ footer {
     .nav-link {
         padding: 5px 8px;
         font-size: 13px;
+    }
+}
+
+/* 添加旋转动画 */
+@keyframes rotateDot1 {
+    from {
+        transform: translateY(10px) scale(0.8) rotate(0deg);
+    }
+    to {
+        transform: translateY(10px) scale(0.8) rotate(360deg);
+    }
+}
+
+@keyframes rotateDot2 {
+    from {
+        transform: translateX(-50%) scale(0) rotate(0deg);
+    }
+    to {
+        transform: translateX(-50%) scale(0) rotate(-360deg);
     }
 } 
