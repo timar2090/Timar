@@ -1,0 +1,20 @@
+<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- 外部星形 -->
+    <path d="M24 4l4.236 12.882h13.708l-11.09 8.118 4.236 12.882L24 29.764l-11.09 8.118 4.236-12.882-11.09-8.118h13.708L24 4z" 
+          stroke="currentColor" stroke-width="2" fill="none"/>
+    
+    <!-- 内部圆环 -->
+    <circle cx="24" cy="24" r="10" stroke="currentColor" stroke-width="2" fill="none" 
+            stroke-dasharray="4 4"/>
+    
+    <!-- 中心装饰 -->
+    <path d="M24 18l2 4 4 1-4 3v4l-2-3-2 3v-4l-4-3 4-1 2-4z" 
+          fill="currentColor"/>
+    
+    <!-- 装饰点 -->
+    <circle cx="24" cy="8" r="2" fill="currentColor"/>
+    <circle cx="36" cy="20" r="2" fill="currentColor"/>
+    <circle cx="32" cy="36" r="2" fill="currentColor"/>
+    <circle cx="16" cy="36" r="2" fill="currentColor"/>
+    <circle cx="12" cy="20" r="2" fill="currentColor"/>
+</svg> 

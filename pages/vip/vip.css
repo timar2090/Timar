@@ -1,0 +1,119 @@
+/* 移动端适配 */
+@media (max-width: 768px) {
+    /* 会员卡片网格适配 */
+    .vip-plans {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+    .vip-card {
+        padding: 1.5rem;
+    }
+
+    .vip-card.featured {
+        transform: none;
+        margin: 0;
+    }
+
+    /* 特权列表适配 */
+    .privileges-list {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+    .privilege-item {
+        padding: 1rem;
+    }
+
+    /* 价格标签适配 */
+    .price-tag {
+        font-size: 2rem;
+    }
+
+    .price-period {
+        font-size: 0.875rem;
+    }
+
+    /* 购买按钮适配 */
+    .purchase-btn {
+        padding: 0.75rem 1.5rem;
+        font-size: 0.875rem;
+    }
+
+    /* 会员等级说明适配 */
+    .vip-levels {
+        padding: 1rem;
+    }
+
+    .level-comparison {
+        overflow-x: auto;
+        padding-bottom: 1rem;
+    }
+
+    .comparison-table {
+        min-width: 600px;
+    }
+
+    /* FAQ部分适配 */
+    .faq-section {
+        padding: 1rem;
+    }
+
+    .faq-item {
+        padding: 1rem;
+    }
+
+    /* 支付方式适配 */
+    .payment-methods {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.5rem;
+        padding: 1rem;
+    }
+
+    .payment-method {
+        padding: 0.75rem;
+    }
+}
+
+/* 小屏幕手机适配 */
+@media (max-width: 375px) {
+    .vip-card {
+        padding: 1.25rem;
+    }
+
+    .price-tag {
+        font-size: 1.75rem;
+    }
+
+    .payment-methods {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* 平板设备适配 */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .vip-plans {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .privileges-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* 安全区域适配 */
+@supports (padding: max(0px)) {
+    .vip-plans,
+    .privileges-list,
+    .vip-levels,
+    .faq-section {
+        padding-left: max(1rem, env(safe-area-inset-left));
+        padding-right: max(1rem, env(safe-area-inset-right));
+    }
+
+    .purchase-btn {
+        margin-bottom: max(1rem, env(safe-area-inset-bottom));
+    }
+} 

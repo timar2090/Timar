@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>视频增强 - 比比控科技</title>
+    <link rel="stylesheet" href="../../website.css">
+    <link rel="stylesheet" href="../../auth.css">
+    <link rel="stylesheet" href="video.css">
+</head>
+<body>
+    <!-- 科技感网格背景 -->
+    <div class="tech-grid"></div>
+    
+    <!-- 发光圆环装饰 -->
+    <div class="glow-circles">
+        <div class="glow-circle"></div>
+        <div class="glow-circle"></div>
+    </div>
+
+    <!-- 顶部导航 -->
+    <header class="ai-header">
+        <div class="header-content">
+            <a href="../../index.html" class="back-btn">
+                <svg viewBox="0 0 24 24" width="20" height="20">
+                    <path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" fill="currentColor"/>
+                </svg>
+                返回官网
+            </a>
+            <h1>视频增强</h1>
+        </div>
+    </header>
+
+    <!-- 主要内容区域 -->
+    <div class="ai-container">
+        <!-- 左侧面板 -->
+        <div class="glass-card">
+            <div class="section-title">
+                上传视频
+            </div>
+            <div class="upload-area" id="uploadArea">
+                <input type="file" id="videoInput" accept="video/*" hidden>
+                <div class="upload-placeholder">
+                    <p>点击或拖拽视频到这里</p>
+                    <span>支持mp4、mov格式，最大100MB</span>
+                </div>
+                <video id="previewVideo" class="preview-video" controls hidden></video>
+            </div>
+            
+            <!-- 增强设置 -->
+            <div class="enhance-settings">
+                <h3>增强选项</h3>
+                <div class="setting-options">
+                    <button class="setting-btn active" data-enhance="quality">画质提升</button>
+                    <button class="setting-btn" data-enhance="fps">帧率提升</button>
+                    <button class="setting-btn" data-enhance="hdr">HDR增强</button>
+                </div>
+            </div>
+
+            <!-- 处理参数调整 -->
+            <div class="param-section">
+                <div class="param-group">
+                    <label for="resolution">分辨率提升</label>
+                    <select id="resolution" class="param-select">
+                        <option value="720p">720p</option>
+                        <option value="1080p">1080p</option>
+                        <option value="2k">2K</option>
+                        <option value="4k">4K</option>
+                    </select>
+                </div>
+                <div class="param-group">
+                    <label for="denoise">降噪强度</label>
+                    <input type="range" id="denoise" min="0" max="100" value="50" class="param-slider">
+                </div>
+                <div class="param-group">
+                    <label for="sharpness">锐化程度</label>
+                    <input type="range" id="sharpness" min="0" max="100" value="50" class="param-slider">
+                </div>
+            </div>
+
+            <button id="processBtn" class="ai-btn" disabled>
+                开始处理
+            </button>
+        </div>
+
+        <!-- 右侧面板 -->
+        <div class="glass-card">
+            <div class="section-title">
+                处理结果
+            </div>
+            <div class="result-display" id="resultDisplay">
+                <div class="placeholder-text">处理后的视频将在这里显示</div>
+            </div>
+            <div class="action-buttons" hidden>
+                <button class="action-btn preview">预览</button>
+                <button class="action-btn download">下载</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="video.js"></script>
+</body>
+</html> 

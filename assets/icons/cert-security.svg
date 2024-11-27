@@ -1,0 +1,21 @@
+<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- 外部盾牌轮廓 -->
+    <path d="M24 4L8 10v12c0 11.046 6.954 21.333 16 24 9.046-2.667 16-12.954 16-24V10L24 4z" 
+          stroke="currentColor" stroke-width="2" fill="none"/>
+    
+    <!-- 内部装饰线 -->
+    <path d="M24 8v28M16 14l16 16M32 14L16 30" 
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-dasharray="2 4"/>
+    
+    <!-- 中心圆环 -->
+    <circle cx="24" cy="24" r="8" stroke="currentColor" stroke-width="2" fill="none"/>
+    
+    <!-- 中心点 -->
+    <circle cx="24" cy="24" r="3" fill="currentColor"/>
+    
+    <!-- 装饰点 -->
+    <circle cx="24" cy="12" r="2" fill="currentColor"/>
+    <circle cx="24" cy="36" r="2" fill="currentColor"/>
+    <circle cx="16" cy="14" r="2" fill="currentColor"/>
+    <circle cx="32" cy="14" r="2" fill="currentColor"/>
+</svg> 

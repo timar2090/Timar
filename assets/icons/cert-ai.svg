@@ -1,0 +1,21 @@
+<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- 外环 -->
+    <circle cx="24" cy="24" r="22" stroke="currentColor" stroke-width="2" stroke-dasharray="4 4"/>
+    
+    <!-- 内部连接线 -->
+    <path d="M24 14V34M14 24H34M17 17L31 31M31 17L17 31" 
+          stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+    
+    <!-- 中心圆点 -->
+    <circle cx="24" cy="24" r="4" fill="currentColor"/>
+    
+    <!-- 装饰点 -->
+    <circle cx="24" cy="14" r="2" fill="currentColor"/>
+    <circle cx="24" cy="34" r="2" fill="currentColor"/>
+    <circle cx="14" cy="24" r="2" fill="currentColor"/>
+    <circle cx="34" cy="24" r="2" fill="currentColor"/>
+    <circle cx="17" cy="17" r="2" fill="currentColor"/>
+    <circle cx="31" cy="31" r="2" fill="currentColor"/>
+    <circle cx="31" cy="17" r="2" fill="currentColor"/>
+    <circle cx="17" cy="31" r="2" fill="currentColor"/>
+</svg> 

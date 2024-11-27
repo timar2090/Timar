@@ -11,7 +11,7 @@
 
 ## 部署
 
-本项目已部署，访问地址：https://bibikong.com/
+本项目使用 GitHub Pages 部署，访问地址：https://bibikong.com/text-to-photo
 
 ## 技术栈
 
