@@ -1,0 +1,172 @@
+/* 视频翻译页面特有的样式 */
+.translation-settings {
+    margin-top: 30px;
+}
+
+.translation-settings h3 {
+    font-size: 16px;
+    color: #1f2937;
+    margin-bottom: 16px;
+}
+
+/* 语言选择下拉框样式 */
+.param-select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid rgba(37, 99, 235, 0.2);
+    border-radius: 8px;
+    background: white;
+    color: #1f2937;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 16px;
+}
+
+.param-select:hover {
+    border-color: rgba(37, 99, 235, 0.4);
+}
+
+.param-select:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.1);
+}
+
+/* 翻译选项样式 */
+.translation-options {
+    margin-top: 30px;
+}
+
+.translation-options h3 {
+    font-size: 16px;
+    color: #1f2937;
+    margin-bottom: 16px;
+}
+
+.setting-options {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.setting-btn {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid rgba(37, 99, 235, 0.2);
+    border-radius: 8px;
+    background: transparent;
+    color: #1f2937;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.setting-btn::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(120deg,
+        rgba(37, 99, 235, 0.1),
+        rgba(124, 58, 237, 0.1)
+    );
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.setting-btn:hover::before {
+    opacity: 1;
+}
+
+.setting-btn.active {
+    background: #2563eb;
+    color: white;
+    border-color: #2563eb;
+}
+
+/* 语音设置样式 */
+.param-section {
+    margin-top: 30px;
+}
+
+.param-group {
+    margin-bottom: 20px;
+}
+
+.param-group label {
+    display: block;
+    color: #1f2937;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+/* 预览区域样式 */
+.preview-video {
+    width: 100%;
+    border-radius: 8px;
+    margin-top: 20px;
+    transition: all 0.3s ease;
+}
+
+.preview-video:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 24px rgba(37, 99, 235, 0.15);
+}
+
+/* 结果展示区域 */
+.result-display {
+    position: relative;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    background: linear-gradient(
+        45deg,
+        rgba(37, 99, 235, 0.02) 0%,
+        rgba(124, 58, 237, 0.02) 100%
+    );
+    overflow: hidden;
+}
+
+.result-display video {
+    max-width: 100%;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.result-display:hover video {
+    transform: scale(1.02);
+}
+
+/* 处理按钮特效 */
+.ai-btn {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(
+        45deg,
+        #2563eb,
+        #7c3aed
+    );
+}
+
+.ai-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.2),
+        transparent
+    );
+    transition: 0.5s;
+}
+
+.ai-btn:hover::before {
+    left: 100%;
+} 

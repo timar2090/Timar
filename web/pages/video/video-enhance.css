@@ -1,0 +1,97 @@
+/* 视频增强页面特有的样式 */
+.enhance-settings {
+    margin-top: 30px;
+}
+
+.enhance-settings h3 {
+    font-size: 16px;
+    color: #1f2937;
+    margin-bottom: 16px;
+}
+
+.setting-options {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.setting-btn {
+    padding: 8px 16px;
+    border: 1px solid rgba(37, 99, 235, 0.2);
+    border-radius: 8px;
+    background: transparent;
+    color: #1f2937;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.setting-btn:hover {
+    background: rgba(37, 99, 235, 0.05);
+}
+
+.setting-btn.active {
+    background: #2563eb;
+    color: white;
+    border-color: #2563eb;
+}
+
+/* 参数选择器样式 */
+.param-select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid rgba(37, 99, 235, 0.2);
+    border-radius: 8px;
+    background: white;
+    color: #1f2937;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.param-select:hover {
+    border-color: rgba(37, 99, 235, 0.4);
+}
+
+.param-select:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.1);
+}
+
+/* 预览区域样式 */
+.preview-video {
+    width: 100%;
+    border-radius: 8px;
+    margin-top: 20px;
+    transition: transform 0.3s ease;
+}
+
+.preview-video:hover {
+    transform: scale(1.02);
+}
+
+/* 结果展示区域 */
+.result-display {
+    position: relative;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    background: linear-gradient(
+        45deg,
+        rgba(37, 99, 235, 0.02) 0%,
+        rgba(124, 58, 237, 0.02) 100%
+    );
+    overflow: hidden;
+}
+
+.result-display video {
+    max-width: 100%;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.result-display:hover video {
+    transform: scale(1.02);
+} 

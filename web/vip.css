@@ -1,0 +1,403 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+    background-color: #f5f5f5;
+    min-height: 100vh;
+}
+
+.nav-bar {
+    background: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+.nav-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    position: relative;
+}
+
+.back-btn {
+    position: absolute;
+    left: -30px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 16px;
+    background: #f5f5f5;
+    color: #333;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+    background: #e5e5e5;
+    transform: translateX(-2px);
+}
+
+.back-icon {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+}
+
+.page-title {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 18px;
+    color: #333;
+}
+
+.vip-container {
+    max-width: 1400px;
+    margin: 100px auto 40px;
+    padding: 40px;
+}
+
+.vip-plans {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px;
+    margin-top: 60px;
+}
+
+.plan-card {
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.plan-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.plan-card.featured {
+    border: 2px solid #1E90FF;
+    transform: scale(1.05);
+}
+
+.best-value {
+    position: absolute;
+    top: -12px;
+    right: 20px;
+    background: #1E90FF;
+    color: white;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 12px;
+}
+
+.plan-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.plan-header h2 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.price {
+    font-size: 32px;
+    color: #1E90FF;
+    font-weight: bold;
+}
+
+.price span {
+    font-size: 14px;
+}
+
+.privilege-list {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.privilege-list li {
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    color: #666;
+}
+
+.price-options {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.price-card {
+    flex: 1;
+    max-width: 200px;
+    padding: 20px;
+    border: 2px solid #ddd;
+    border-radius: 12px;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.price-card.selected {
+    border-color: #1E90FF;
+    background: #f0f8ff;
+}
+
+.price-header {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.price-amount {
+    font-size: 28px;
+    color: #1E90FF;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.price-period {
+    color: #666;
+    font-size: 14px;
+}
+
+.price-tag {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background: #ff4444;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+}
+
+.payment-section {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+.qr-code {
+    margin-bottom: 20px;
+}
+
+.qr-code img {
+    width: 200px;
+    height: 200px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.payment-info {
+    margin-bottom: 20px;
+}
+
+.payment-amount {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.payment-tip {
+    color: #666;
+}
+
+.payment-status {
+    padding: 10px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    color: #666;
+}
+
+@media (max-width: 768px) {
+    .privilege-list {
+        grid-template-columns: 1fr;
+    }
+
+    .price-options {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .price-card {
+        width: 100%;
+    }
+
+    .back-btn {
+        padding: 6px 12px;
+        font-size: 12px;
+        left: -20px;
+    }
+    
+    .back-icon {
+        width: 16px;
+        height: 16px;
+    }
+}
+
+/* 更新立即开通按钮样式 */
+.buy-btn {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    background: linear-gradient(135deg, #1E90FF, #00BFFF);
+    color: white;
+    box-shadow: 0 4px 15px rgba(30, 144, 255, 0.3);
+}
+
+/* 添加按钮光效 */
+.buy-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255, 255, 255, 0.3),
+        transparent
+    );
+    transition: 0.5s;
+}
+
+/* 悬浮效果 */
+.buy-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(30, 144, 255, 0.4);
+}
+
+.buy-btn:hover::before {
+    left: 100%;
+}
+
+/* 点击效果 */
+.buy-btn:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 10px rgba(30, 144, 255, 0.3);
+}
+
+/* 特别版本按钮（年度会员） */
+.buy-btn.featured {
+    background: linear-gradient(135deg, #FFD700, #FFA500);
+    box-shadow: 0 4px 15px rgba(255, 165, 0, 0.3);
+}
+
+.buy-btn.featured:hover {
+    box-shadow: 0 8px 25px rgba(255, 165, 0, 0.4);
+}
+
+.buy-btn.featured:active {
+    box-shadow: 0 2px 10px rgba(255, 165, 0, 0.3);
+}
+
+/* 添加按钮内部装饰 */
+.buy-btn::after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    right: 2px;
+    height: 40%;
+    background: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0.2),
+        transparent
+    );
+    border-radius: 10px 10px 100px 100px;
+    pointer-events: none;
+}
+
+/* 调整会员卡片布局和间距 */
+.vip-container {
+    max-width: 1400px;
+    margin: 100px auto 40px;
+    padding: 40px;
+}
+
+.vip-plans {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px;
+    margin-top: 60px;
+}
+
+.plan-card {
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.plan-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.plan-features {
+    margin-bottom: 40px;
+}
+
+.feature-item {
+    padding: 12px 0;
+    font-size: 15px;
+    color: #555;
+}
+
+/* 响应式调整 */
+@media (max-width: 1200px) {
+    .vip-plans {
+        gap: 30px;
+    }
+    
+    .plan-card {
+        padding: 30px;
+    }
+}
+
+@media (max-width: 968px) {
+    .vip-plans {
+        grid-template-columns: repeat(1, 1fr);
+        max-width: 600px;
+        margin: 40px auto;
+        gap: 40px;
+    }
+    
+    .vip-container {
+        padding: 20px;
+    }
+} 

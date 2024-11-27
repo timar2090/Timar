@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI图片编辑 - 比比控科技</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="nav-bar">
+        <div class="nav-content">
+            <a href="index.html" class="back-to-website">
+                <svg class="back-icon" viewBox="0 0 24 24">
+                    <path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" />
+                </svg>
+                返回官网
+            </a>
+            <div class="nav-right">
+                <a href="vip.html" class="nav-btn vip-btn">开通会员</a>
+                <a href="#" class="nav-btn login-btn" id="loginBtn">登录</a>
+                <a href="register.html" class="nav-btn register-btn" id="registerBtn">注册</a>
+            </div>
+        </div>
+    </nav>
+
+    <header>
+        <h1>AI图片编辑</h1>
+        <p>选择你需要的图片处理功能</p>
+    </header>
+    
+    <main class="grid-container">
+        <a href="matting.html" class="grid-item">
+            <div class="item-image" style="background: linear-gradient(135deg, #6CACFF 0%, #8E74FF 100%);">
+                <img src="assets/features/matting.jpg" alt="AI抠图">
+            </div>
+            <div class="item-text">AI抠图</div>
+        </a>
+        <a href="enhance.html" class="grid-item">
+            <div class="item-image" style="background: linear-gradient(135deg, #45B7D1 0%, #4960F9 100%);">
+                <img src="assets/features/enhance.jpg" alt="图片变清晰">
+            </div>
+            <div class="item-text">图片变清晰</div>
+        </a>
+        <a href="remove.html" class="grid-item">
+            <div class="item-image" style="background: linear-gradient(135deg, #FF6B6B 0%, #CC2B5E 100%);">
+                <img src="assets/features/remove.jpg" alt="物体移除">
+            </div>
+            <div class="item-text">物体移除</div>
+        </a>
+        <a href="portrait.html" class="grid-item">
+            <div class="item-image" style="background: linear-gradient(135deg, #2CD8D5 0%, #8E37D7 100%);">
+                <img src="assets/features/portrait.jpg" alt="AI证件照">
+            </div>
+            <div class="item-text">AI证件照</div>
+        </a>
+        <a href="background.html" class="grid-item">
+            <div class="item-image" style="background: linear-gradient(135deg, #56CCF2 0%, #2F80ED 100%);">
+                <img src="assets/features/background.jpg" alt="背景生成">
+            </div>
+            <div class="item-text">背景生成</div>
+        </a>
+        <a href="colorize.html" class="grid-item">
+            <div class="item-image" style="background: linear-gradient(135deg, #FF8008 0%, #FFC837 100%);">
+                <img src="assets/features/colorize.jpg" alt="黑白上色">
+            </div>
+            <div class="item-text">黑白上色</div>
+        </a>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html> 

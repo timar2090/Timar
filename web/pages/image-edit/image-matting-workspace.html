@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI智能抠图工作区 - 比比控科技</title>
+    <link rel="stylesheet" href="../../website.css">
+    <link rel="stylesheet" href="image-matting-workspace.css">
+</head>
+<body>
+    <!-- 简化版导航栏 -->
+    <nav class="nav-bar glass-effect">
+        <div class="nav-content">
+            <a href="../../index.html" class="nav-logo">
+                <div class="logo-wrapper">
+                    <span class="logo-text">
+                        <span class="logo-highlight">BIBI</span>KONG
+                    </span>
+                    <div class="logo-decoration">
+                        <span class="logo-dot"></span>
+                        <span class="logo-line"></span>
+                    </div>
+                </div>
+            </a>
+            <div class="nav-right">
+                <div class="auth-buttons">
+                    <a href="../../vip.html" class="auth-button vip">
+                        <svg class="auth-icon" viewBox="0 0 24 24">
+                            <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
+                        </svg>
+                        开通会员
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 工作区主体 -->
+    <main class="workspace">
+        <!-- 左侧工具栏和参数面板 -->
+        <aside class="toolbar">
+            <div class="tool-group-container">
+                <div class="tool-group" data-title="基础操作">
+                    <button class="tool-btn" id="uploadBtn">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM14 13v4h-4v-4H7l5-5 5 5h-3z"/>
+                        </svg>
+                        <span>上传图片</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="tool-group-container">
+                <div class="tool-group" data-title="智能抠图">
+                    <button class="tool-btn" id="portraitMatting">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12 4a4 4 0 014 4 4 4 0 01-4 4 4 4 0 01-4-4 4 4 0 014-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4z"/>
+                        </svg>
+                        <span>一键扣人像</span>
+                    </button>
+                    <button class="tool-btn" id="productMatting">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M19 6h-2c0-2.76-2.24-5-5-5S7 3.24 7 6H5c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-7-3c1.66 0 3 1.34 3 3H9c0-1.66 1.34-3 3-3zm0 10c-2.76 0-5-2.24-5-5h2c0 1.66 1.34 3 3 3s3-1.34 3-3h2c0 2.76-2.24 5-5 5z"/>
+                        </svg>
+                        <span>一键扣商品</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="toolbar-divider"></div>
+
+            <div class="tool-group-container">
+                <div class="tool-group" data-title="背景设置">
+                    <div class="bg-options">
+                        <button class="bg-option active" data-bg="transparent">
+                            <span class="transparent-grid"></span>
+                            <span>透明</span>
+                        </button>
+                        <button class="bg-option" data-bg="white">
+                            <span class="bg-preview" style="background: white;"></span>
+                            <span>白色</span>
+                        </button>
+                        <button class="bg-option" data-bg="black">
+                            <span class="bg-preview" style="background: black;"></span>
+                            <span>黑色</span>
+                        </button>
+                        <button class="bg-option" data-bg="custom-color">
+                            <div class="color-picker-container">
+                                <input type="color" id="bgColorPicker" value="#ffffff">
+                            </div>
+                            <span class="bg-preview custom-color-preview"></span>
+                            <span>自选颜色</span>
+                        </button>
+                    </div>
+                    <!-- 添加颜色选择浮窗 -->
+                    <div class="color-picker-popup" style="display: none;">
+                        <input type="color" id="bgColorPicker" value="#ffffff">
+                        <div class="color-picker-actions">
+                            <button class="color-picker-btn cancel">取消</button>
+                            <button class="color-picker-btn confirm">确定</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="toolbar-divider"></div>
+
+            <div class="tool-group-container">
+                <div class="tool-group" data-title="导出设置">
+                    <select id="exportFormat" class="export-select">
+                        <option value="png">PNG格式</option>
+                        <option value="jpg">JPG格式</option>
+                        <option value="webp">WebP格式</option>
+                    </select>
+                    <button class="export-btn" id="exportBtn">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/>
+                        </svg>
+                        <span>导出图片</span>
+                    </button>
+                </div>
+            </div>
+        </aside>
+
+        <!-- 右侧画布区域 -->
+        <section class="canvas-area">
+            <div class="canvas-container">
+                <div class="canvas-wrapper" id="canvasWrapper">
+                    <div class="upload-hint" id="uploadHint">
+                        <div class="hint-content">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM14 13v4h-4v-4H7l5-5 5 5h-3z"/>
+                            </svg>
+                            <h3>拖放图片到此处或点击上传</h3>
+                            <p>支持 JPG、PNG、WebP 格式</p>
+                            <p class="hint-size">建议尺寸不超过 4096×4096 像素</p>
+                        </div>
+                    </div>
+                    <div class="preview-area" id="previewArea" style="display: none;">
+                        <canvas id="sourceCanvas"></canvas>
+                        <canvas id="resultCanvas"></canvas>
+                    </div>
+                </div>
+                <div class="canvas-tools">
+                    <button class="canvas-tool" id="zoomIn">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14zm2.5-4h-2v2H9v-2H7V9h2V7h1v2h2v1z"/>
+                        </svg>
+                    </button>
+                    <button class="canvas-tool" id="zoomOut">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14zM7 9h5v1H7z"/>
+                        </svg>
+                    </button>
+                    <button class="canvas-tool" id="fitScreen">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M19 12h-2v3h-3v2h5v-5zM7 9h3V7H5v5h2V9zm14-6H3c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16.01H3V4.99h18v14.02z"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div class="loading-overlay" id="loadingOverlay" style="display: none;">
+        <div class="loading-spinner"></div>
+        <div class="loading-text">正在处理中...</div>
+    </div>
+
+    <div class="process-status" id="processStatus" style="display: none;">
+        <div class="status-icon">
+            <svg class="status-success" viewBox="0 0 24 24">
+                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
+            </svg>
+            <svg class="status-error" viewBox="0 0 24 24">
+                <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/>
+            </svg>
+        </div>
+        <div class="status-text"></div>
+    </div>
+
+    <!-- 添加调试状态显示 -->
+    <div id="debugStatus" style="position: fixed; bottom: 10px; left: 10px; background: rgba(0,0,0,0.7); color: white; padding: 10px; border-radius: 5px; font-size: 12px; display: none;"></div>
+
+    <!-- 修改 script 标签 -->
+    <script>
+        // 添加调试函数
+        function showDebug(message) {
+            const debugEl = document.getElementById('debugStatus');
+            if (debugEl) {
+                debugEl.textContent = message;
+                debugEl.style.display = 'block';
+                setTimeout(() => {
+                    debugEl.style.display = 'none';
+                }, 3000);
+            }
+            console.log(message);
+        }
+    </script>
+    <script src="image-matting-workspace.js"></script>
+</body>
+</html> 

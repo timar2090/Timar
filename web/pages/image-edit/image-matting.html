@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI智能抠图 - 比比控科技</title>
+    <link rel="stylesheet" href="../../website.css">
+    <link rel="stylesheet" href="image-matting.css">
+</head>
+<body>
+    <!-- 动态背景 -->
+    <div class="dynamic-bg">
+        <div class="gradient-sphere"></div>
+        <div class="mesh-grid"></div>
+        <div class="light-spots">
+            <div class="light-spot"></div>
+            <div class="light-spot"></div>
+        </div>
+    </div>
+
+    <!-- 导航栏 -->
+    <nav class="nav-bar glass-effect">
+        <div class="nav-content">
+            <a href="../../index.html" class="nav-logo">
+                <span class="logo-text">BIBIKONG</span>
+            </a>
+            <div class="nav-links">
+                <a href="#features">产品特性</a>
+                <a href="#showcase">案例展示</a>
+                <a href="#pricing">价格方案</a>
+                <div class="nav-buttons">
+                    <a href="image-matting-workspace.html" class="nav-btn primary">在线创作</a>
+                    <a href="#download" class="nav-btn secondary">下载APP端</a>
+                    <a href="#desktop" class="nav-btn outline">下载桌面端</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero区域 -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="badge-icon">✨</span>
+                <span class="badge-text">AI Portrait Pro</span>
+            </div>
+            <h1 class="hero-title">
+                <span class="gradient-text">AI智能抠图</span>
+                <span class="title-desc">一键生成专业级透明背景</span>
+            </h1>
+            <p class="hero-desc">
+                采用先进的深度学习算法，秒级处理，像素级精度，让创作更自由
+            </p>
+            
+            <div class="hero-actions">
+                <div class="action-buttons">
+                    <button class="action-btn primary" onclick="window.location.href='image-matting-workspace.html'">
+                        <span class="btn-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </span>
+                        在线创作
+                    </button>
+                    <button class="action-btn secondary">
+                        <span class="btn-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2L2 12H6V22H18V12H22L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </span>
+                        下载APP端
+                    </button>
+                    <button class="action-btn outline">
+                        <span class="btn-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2"/>
+                                <path d="M7 12H17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                <path d="M12 7L12 17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </span>
+                        下载桌面端
+                    </button>
+                </div>
+                
+                <div class="platform-support">
+                    <span class="platform-label">支持平台</span>
+                    <div class="platform-icons">
+                        <div class="platform-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M17.6 9.48l1.84-3.18c.16-.31.04-.69-.26-.85-.31-.16-.69-.04-.85.26l-1.87 3.24c-1.42-.63-3.02-.99-4.72-.99-1.7 0-3.3.36-4.72.99L5.15 5.71c-.16-.31-.54-.42-.85-.26-.31.16-.43.54-.26.85l1.84 3.18C2.81 11.9 1 15.09 1 18.5h22c0-3.41-1.81-6.6-5.4-9.02zM7 15.5c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm10 0c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1z" fill="currentColor"/>
+                            </svg>
+                            <span>Android</span>
+                        </div>
+                        <div class="platform-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M17.05 20.28c-.98 1.15-2.01 1.1-3.02.44-.96-.62-1.84-.64-2.89 0-1.31.84-2.24.72-3.15-.44-4.25-6.03-3.53-14.73 2.37-14.91 1.84.07 3.13 1.03 3.81 1.05.89-.13 2.29-1.13 4.02-.91.95.09 3.66.71 4.48 3.77-4.33 2.37-3.69 8.65 1.38 10.03-.64 1.47-1.47 2.96-3 4.97zM12.9 3.37c-.16-2.27 1.87-4.46 4.23-4.37.37 2.5-2.38 4.72-4.23 4.37z" fill="currentColor"/>
+                            </svg>
+                            <span>iOS</span>
+                        </div>
+                        <div class="platform-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-12.9-1.801" fill="currentColor"/>
+                            </svg>
+                            <span>Windows</span>
+                        </div>
+                        <div class="platform-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2-.77-3.27-.82-1.31-.05-2.3 1.32-3.14 2.53C4.24 25 2.94 20.45 4.7 17.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83z" fill="currentColor"/>
+                                <path d="M13 5.96c.17-1.26 1.13-2.23 2.34-2.43.16 1.26-.51 2.55-1.62 3.36-1.02.74-2.22.56-2.48.54-.17-1.27.64-2.36 1.76-3.47z" fill="currentColor"/>
+                            </svg>
+                            <span>macOS</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 特性展示 -->
+    <section id="features" class="features">
+        <div class="section-header">
+            <span class="section-badge">产品特性</span>
+            <h2 class="section-title">强大的AI抠图能力</h2>
+            <p class="section-desc">专业级图片理技术，让创作更简单</p>
+        </div>
+
+        <div class="features-grid">
+            <div class="feature-card glass-effect">
+                <div class="feature-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                        <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2"/>
+                        <path d="M12 2L12 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M12 20L12 22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M2 12L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M20 12L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <h3>智能识别</h3>
+                <p>先进的AI算法，精准识别主体对象，处理复杂边缘细节</p>
+                <div class="feature-tags">
+                    <span class="tag">边缘检测</span>
+                    <span class="tag">细节处理</span>
+                </div>
+            </div>
+
+            <div class="feature-card glass-effect">
+                <div class="feature-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <h3>极速处理</h3>
+                <p>3秒内完成抠图，支持批量处理，效率提升300%</p>
+                <div class="feature-tags">
+                    <span class="tag">快速响应</span>
+                    <span class="tag">批量处理</span>
+                </div>
+            </div>
+
+            <div class="feature-card glass-effect">
+                <div class="feature-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M4 16L4 17C4 18.6569 5.34315 20 7 20L17 20C18.6569 20 20 18.6569 20 17L20 16M16 12L12 16M12 16L8 12M12 16L12 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <h3>一键导出</h3>
+                <p>支持多种格式导出，满足不同场景需求</p>
+                <div class="feature-tags">
+                    <span class="tag">PNG</span>
+                    <span class="tag">PSD</span>
+                    <span class="tag">WebP</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 工作流程 -->
+    <section class="workflow">
+        <div class="section-header">
+            <span class="section-badge">使用流程</span>
+            <h2 class="section-title">三步完成专业抠图</h2>
+            <p class="section-desc">简单直观的操作流程，快速获得专业效果</p>
+        </div>
+
+        <div class="workflow-steps">
+            <div class="step-card glass-effect">
+                <div class="step-number">01</div>
+                <div class="step-content">
+                    <h3>上传图片</h3>
+                    <p>支持拖放或点击上传，多种格式支持</p>
+                </div>
+            </div>
+            <div class="step-card glass-effect">
+                <div class="step-number">02</div>
+                <div class="step-content">
+                    <h3>智能处理</h3>
+                    <p>AI自动识别主体，精准分离背景</p>
+                </div>
+            </div>
+            <div class="step-card glass-effect">
+                <div class="step-number">03</div>
+                <div class="step-content">
+                    <h3>导出成品</h3>
+                    <p>选择导出格式，一键下载成品</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 案例展示 -->
+    <section id="showcase" class="showcase">
+        <div class="section-header">
+            <span class="section-badge">案例展示</span>
+            <h2 class="section-title">实际应用效果</h2>
+            <p class="section-desc">来自不同场景的真实案例展示</p>
+        </div>
+
+        <div class="showcase-grid">
+            <!-- 添加案例展示卡片 -->
+        </div>
+    </section>
+
+    <!-- 价格方案 -->
+    <section id="pricing" class="pricing">
+        <div class="section-header">
+            <span class="section-badge">价格方案</span>
+            <h2 class="section-title">灵活的付费方案</h2>
+            <p class="section-desc">根据您的需求选择合适的套餐</p>
+        </div>
+
+        <div class="pricing-grid">
+            <div class="pricing-card glass-effect">
+                <div class="pricing-header">
+                    <h3>免费版</h3>
+                    <div class="price">
+                        <span class="amount">¥0</span>
+                        <span class="period">/月</span>
+                    </div>
+                </div>
+                <ul class="pricing-features">
+                    <li>✓ 基础抠图功能</li>
+                    <li>✓ 每日10张配额</li>
+                    <li>✓ 标准导出格式</li>
+                </ul>
+                <button class="pricing-btn outline">立即使用</button>
+            </div>
+
+            <div class="pricing-card glass-effect featured">
+                <div class="pricing-header">
+                    <h3>专业版</h3>
+                    <div class="price">
+                        <span class="amount">¥99</span>
+                        <span class="period">/月</span>
+                    </div>
+                </div>
+                <ul class="pricing-features">
+                    <li>✓ 高级抠图算法</li>
+                    <li>✓ 无限量处理</li>
+                    <li>✓ 批量处理</li>
+                    <li>✓ 优先处理队列</li>
+                    <li>✓ 全格式支持</li>
+                </ul>
+                <button class="pricing-btn primary">立即购买</button>
+            </div>
+
+            <div class="pricing-card glass-effect">
+                <div class="pricing-header">
+                    <h3>企业版</h3>
+                    <div class="price">
+                        <span class="amount">定制</span>
+                    </div>
+                </div>
+                <ul class="pricing-features">
+                    <li>✓ 专属服务器</li>
+                    <li>✓ API接口</li>
+                    <li>✓ 技术支持</li>
+                    <li>✓ 定制开发</li>
+                </ul>
+                <button class="pricing-btn outline">联系我们</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>关于我们</h4>
+                <p>AI图像处理解决方案</p>
+            </div>
+            <div class="footer-section">
+                <h4>快速链接</h4>
+                <a href="#features">产品特性</a>
+                <a href="#pricing">价格方案</a>
+                <a href="#contact">联系我们</a>
+            </div>
+            <div class="footer-section">
+                <h4>联系方式</h4>
+                <p>support@bibikong.com</p>
+                <p>400-888-8888</p>
+            </div>
+            <div class="footer-section">
+                <h4>关注我们</h4>
+                <div class="social-links">
+                    <a href="#" class="social-link">微信</a>
+                    <a href="#" class="social-link">微博</a>
+                    <a href="#" class="social-link">知乎</a>
+                    <a href="#" class="social-link">小红书</a>
+                    <a href="#" class="social-link">抖音</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2024 比比控科技. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="image-matting.js"></script>
+</body>
+</html> 

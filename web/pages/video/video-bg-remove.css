@@ -1,0 +1,75 @@
+/* 视频背景移除页面特有的样式 */
+.bg-settings {
+    margin-top: 30px;
+}
+
+.bg-settings h3 {
+    font-size: 16px;
+    color: #1f2937;
+    margin-bottom: 16px;
+}
+
+.setting-options {
+    display: flex;
+    gap: 12px;
+}
+
+.setting-btn {
+    padding: 8px 16px;
+    border: 1px solid rgba(37, 99, 235, 0.2);
+    border-radius: 8px;
+    background: transparent;
+    color: #1f2937;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.setting-btn:hover {
+    background: rgba(37, 99, 235, 0.05);
+}
+
+.setting-btn.active {
+    background: #2563eb;
+    color: white;
+    border-color: #2563eb;
+}
+
+/* 预览区域样式 */
+.preview-video {
+    width: 100%;
+    border-radius: 8px;
+    margin-top: 20px;
+    transition: transform 0.3s ease;
+}
+
+.preview-video:hover {
+    transform: scale(1.02);
+}
+
+/* 结果展示区域 */
+.result-display {
+    position: relative;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    background: repeating-linear-gradient(
+        45deg,
+        rgba(0, 0, 0, 0.02) 0px,
+        rgba(0, 0, 0, 0.02) 10px,
+        rgba(0, 0, 0, 0.01) 10px,
+        rgba(0, 0, 0, 0.01) 20px
+    );
+    overflow: hidden;
+}
+
+.result-display video {
+    max-width: 100%;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.result-display:hover video {
+    transform: scale(1.02);
+} 
